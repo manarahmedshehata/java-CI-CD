@@ -5,8 +5,9 @@ pipeline {
         	steps {
         		echo "java build"
 			sh"""
-				cd ./my-app
 				echo $JAVA_HOME
+				cd ./my-app
+				
 				echo "+++++++++++++++++"
 				java -version
 				echo "+++++++++++++++++"
