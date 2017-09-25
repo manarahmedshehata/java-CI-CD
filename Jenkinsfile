@@ -12,8 +12,13 @@ pipeline {
         	}
         }
         stage('docker Build') {
-			steps {
-				echo "docker build"
+		steps {
+			echo "docker build"
+			sh"""
+				cp ${WORKSPACE}/my-app/target/my-app-1.0-SNAPSHOT.jar .
+				docker build -t myapp .
+				docker images
+			"""
         	}
         }
         stage('Deployment') {
