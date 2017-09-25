@@ -6,7 +6,7 @@ pipeline {
         		echo "java build"
 			sh"""
 				echo $USER
-				echo $JAVA_HOME
+				#echo $JAVA_HOME
 				cd ./my-app
 				
 				echo "+++++++++++++++++"
