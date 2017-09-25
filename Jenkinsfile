@@ -5,15 +5,8 @@ pipeline {
         	steps {
         		echo "java build"
 			sh"""
-				echo $USER
 				cd ./my-app
-				
-				echo "+++++++++++++++++"
-				java -version
-				echo "+++++++++++++++++"
-				mvn -v
-				echo "+++++++++++++++++"
-				mvn package
+				mvn clean package
 				java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App
 			"""
         	}
