@@ -4,8 +4,8 @@ pipeline {
         stage('Java Build') {
         	steps {
         		echo "java build"
-			echo $DOCKER_USER 
-			echo $DOCKER_PWD
+			echo DOCKER_USER 
+			echo DOCKER_PWD
 			/*
 			sh"""
 				cd ./my-app
