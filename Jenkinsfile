@@ -26,7 +26,9 @@ pipeline {
 				docker push deploymentcoe/myapp
 				docker images
 				#docker rmi myapp
+				cd ${WORKSPACE}/
 				"""
+				deleteDir()
 			}
 			
         	}
