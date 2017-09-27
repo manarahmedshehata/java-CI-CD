@@ -35,6 +35,7 @@ pipeline {
         stage('Deployment') {
 			steps {
 				echo "Deployment"
+				kubectl apply -f ./manifests
         	}
         }
 

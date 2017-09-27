@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: cicd-test-mvn
+  namespace: cicd-test
+  labels:
+    app: cicd-test-mvn
+    env: cicd-test
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: cicd-test-mvn
+        env: cicd-test
+    spec:
+      containers:
+      - name: mvn-app
+        image: deploymentcoe/myapp
