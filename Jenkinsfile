@@ -38,6 +38,7 @@ pipeline {
 			steps {
 				echo "Deployment"
 				sh """
+					ls
 					kubectl delete -f ./manifests/deployment.yaml
 					#kubectl apply -f ./manifests
 				"""
