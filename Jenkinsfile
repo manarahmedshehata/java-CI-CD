@@ -30,7 +30,7 @@ pipeline {
 				#docker rmi myapp
 				cd ${WORKSPACE}/
 				"""
-				deleteDir()
+				//deleteDir()
 			}
 			
 			
