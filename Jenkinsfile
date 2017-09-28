@@ -27,7 +27,7 @@ pipeline {
 				docker login --username $USERNAME --password $PASSWORD
 				docker push deploymentcoe/myapp
 				docker images
-				docker rmi myapp
+				docker rmi deploymentcoe/myapp
 				
 				"""
 				//deleteDir()
