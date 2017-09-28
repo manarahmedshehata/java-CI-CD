@@ -27,8 +27,8 @@ pipeline {
 				docker login --username $USERNAME --password $PASSWORD
 				docker push deploymentcoe/myapp
 				docker images
-				#docker rmi myapp
-				cd ${WORKSPACE}/
+				docker rmi myapp
+				
 				"""
 				//deleteDir()
 			}
@@ -43,7 +43,9 @@ pipeline {
 				sh """
 					kubectl delete -f ./manifests/deployment.yaml
 					kubectl apply -f ./manifests
+					
 				"""
+				deleteDir()
         	}
         }
 
