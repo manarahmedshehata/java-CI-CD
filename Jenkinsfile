@@ -5,12 +5,10 @@ pipeline {
         	steps {
 			
         		echo "java build"
-			
 			sh"""
 				cd ./my-app
 				mvn clean package
 			"""
-			
         	}
         }
 	    
