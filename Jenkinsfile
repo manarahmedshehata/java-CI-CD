@@ -5,20 +5,20 @@ pipeline {
         	steps {
 			
         		echo "java build"
-			/*
+			
 			sh"""
 				cd ./my-app
 				mvn clean package
 				java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App
 			"""
-			*/
+			
         	}
         }
 	    
         stage('docker Build') {
 		steps {
 			echo "docker build"
-			/*
+			
 			withCredentials([usernamePassword(credentialsId: '18b57317-0966-4f4a-9fa8-49f733bc09bd', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
 				sh """
 				cd my-app/src/main/docker/
@@ -32,7 +32,7 @@ pipeline {
 				"""
 				deleteDir()
 			}
-			*/
+			
 			
         	}
         }
@@ -41,10 +41,8 @@ pipeline {
 			steps {
 				echo "Deployment"
 				sh """
-					ls
-					pwd
-					kubectl delete -f ./manifests/deployment.yaml
-					#kubectl apply -f ./manifests
+					#kubectl delete -f ./manifests/deployment.yaml
+					kubectl apply -f ./manifests
 				"""
         	}
         }
