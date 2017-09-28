@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
  * Hello world!
  *
  */
-public class App 
+public class Example 
 {
    @RequestMapping("/")
     String home() {
