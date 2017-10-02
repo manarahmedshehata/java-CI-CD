@@ -18,3 +18,5 @@ spec:
       - name: mvn-app
         image: deploymentcoe/myapp
         imagePullPolicy: Always
+      imagePullSecrets:
+      - name: hubsecret
